@@ -68,6 +68,7 @@ QMC5883LCompass::QMC5883LCompass() {
 **/
 void QMC5883LCompass::init(){
 	Wire.begin();
+	_writeReg(0x0A,0x80);
 	_writeReg(0x0B,0x01);
 	setMode(0x01,0x0C,0x10,0X00);
 }
